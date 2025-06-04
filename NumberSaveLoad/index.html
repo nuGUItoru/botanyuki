@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage 数値保存・読み込み</title>
+</head>
+<body>
+    <h1>LocalStorage 数値保存・読み込み</h1>
+
+    <label for="numberInput">数値を入力してください:</label>
+    <input type="number" id="numberInput" value="0">
+    <button onclick="saveNumber()">保存</button>
+    <button onclick="loadNumber()">読み込み</button>
+    <button onclick="clearStorage()">削除</button>
+
+    <p>保存された数値: <span id="displayNumber"></span></p>
+
+    <script>
+        const STORAGE_KEY = 'myStoredNumber'; // localStorageのキー
+
+        // ページ読み込み時に保存された数値を表示
+        window.onload = loadNumber;
+
+        function saveNumber() {
+            const numberInput = document.getElementById('numberInput');
+            const numberToSave = parseFloat(numberInput.value); // 数値に変換
+
+            if (isNaN(numberToSave)) {
+                alert('有効な数値を入力してください。');
+                return;
+            }
+
+            // 数値を文字列として保存
+            localStorage.setItem(STORAGE_KEY, numberToSave.toString());
+            document.getElementById('displayNumber').textContent = numberToSave;
+            alert('数値を保存しました: ' + numberToSave);
+        }
+
+        function loadNumber() {
+            // 文字列として保存された数値を読み込み
+            const storedNumberString = localStorage.getItem(STORAGE_KEY);
+            const displayNumberElement = document.getElementById('displayNumber');
+            const numberInput = document.getElementById('numberInput');
+
+            if (storedNumberString !== null) {
+                const loadedNumber = parseFloat(storedNumberString); // 数値に変換
+                displayNumberElement.textContent = loadedNumber;
+                numberInput.value = loadedNumber; // 入力欄にも反映
+                console.log('数値を読み込みました: ' + loadedNumber);
+            } else {
+                displayNumberElement.textContent = '保存された数値はありません。';
+                numberInput.value = 0;
+                console.log('保存された数値はありません。');
+            }
+        }
+
+        function clearStorage() {
+            localStorage.removeItem(STORAGE_KEY);
+            document.getElementById('displayNumber').textContent = '保存された数値はありません。';
+            document.getElementById('numberInput').value = 0;
+            alert('保存された数値を削除しました。');
+        }
+    </script>
+</body>
+</html>
