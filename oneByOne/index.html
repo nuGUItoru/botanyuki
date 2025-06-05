@@ -16,6 +16,7 @@
       margin-bottom: 10px;
     }
     .value {
+      display: inline-block;
       width: 10em;
     }
     button {
@@ -52,6 +53,7 @@
       // 現在のカウンターの値を表示する要素
       const display = document.createElement('span');
       display.className = 'value';
+      display.width = 
       display.textContent = counter.value;
 
       // 「+」ボタン（加算）
