@@ -65,6 +65,7 @@
         // 値をインクリメントして表示を更新
         counter.value++;
         display.textContent = counter.value;
+        saveCounters();  // 保存
       });
 
       // 「-」ボタン（減算）
@@ -74,6 +75,7 @@
         // 値をデクリメントして表示を更新
         counter.value--;
         display.textContent = counter.value;
+        saveCounters();  // 保存
       });
 
       // 「クリア」ボタン（値の初期化）
@@ -83,6 +85,7 @@
         // 値を 0 にして表示を更新
         counter.value = 0;
         display.textContent = counter.value;
+        saveCounters();  // 保存
       });
 
       // 各要素をコンテナに追加
