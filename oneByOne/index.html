@@ -116,6 +116,11 @@
       countersData.forEach(function(counter) {
         var storageID = "OneByOne_" + counter.id;
         var countValue = localStorage.getItem(storageID);
+
+        if(isNaN(countValue) == true)
+        {
+          countValue = 0;
+        }
         counter.value = countValue;
       });
     }
