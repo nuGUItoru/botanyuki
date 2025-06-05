@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>複数カウンターサンプルアプリ</title>
+  <title>一つ、また一つ</title>
   <style>
     .counter {
       border: 1px solid #ccc;
@@ -23,7 +23,7 @@
     }
     button {
       margin: 5px;
-      padding: 5px 10px;
+      padding: 5px 5px;
     }
   </style>
 </head>
@@ -55,7 +55,6 @@
       // 現在のカウンターの値を表示する要素
       const display = document.createElement('span');
       display.className = 'value';
-      display.width = 
       display.textContent = counter.value;
 
       // 「+」ボタン（加算）
