@@ -8,8 +8,14 @@
   
 <body>
     <p>一つ、また一つ</p>
-    <label for="numberInput1">1</label>
-    <input type="number" id="numberInput1" value="0">
+
+    <p>
+        <label for="numberInput[0]">1</label>
+        <input type="number" id="numberInput[0]">
+        <button onclick="IncNumber(0)">+</button>
+    </p>
+
+    
     <input type="number" id="numberInput2">
     <input type="number" id="numberInput3">
     <input type="number" id="numberInput4">
@@ -28,6 +34,9 @@
         let countNumber6 = 0;
         let countNumber7 = 0;
         let countNumber8 = 0;
-        
+
+        function IncNumber(index) {
+            return;
+        }
     </script>
 </body>
