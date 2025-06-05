@@ -11,7 +11,7 @@
 
     <p>
         <label for="numberInput[0]">1</label>
-        <input type="number" id="numberInput[0]">
+        <input type="number" name="numberInput">
         <button onclick="IncNumber(0)">+</button>
     </p>
 
@@ -36,7 +36,8 @@
         let countNumber8 = 0;
 
         function IncNumber(index) {
-            const numberInput = document.getElementById('numberInput[index]');
+            const numberInput = document.numberInput[index].value;
+            alert(numberInput);
             return;
         }
     </script>
