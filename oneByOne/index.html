@@ -94,6 +94,15 @@
       return container;
     }
 
+    // カウンター値保存
+    function saveCounters() {
+      var countersContainer = document.getElementById('counters');
+      countersData.forEach(function(counter) {
+        var storageID = "OneByOne_" + counter.id;
+        localStorage.setItem(storageID, counter.value.toString());
+      });
+    }
+
     // ページ内の counters コンテナに各カウンター要素を追加
     const countersContainer = document.getElementById('counters');
     countersData.forEach(function(counter) {
