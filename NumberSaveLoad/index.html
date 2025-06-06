@@ -29,17 +29,16 @@
         //  throw new Error(`ファイルの読み込みに失敗しました: ${response.status} ${response.statusText}`);
         //}
         //const text = response.text(); // ファイルの内容全体を文字列として取得
-        //console.log('2行目', text[1]);
         // ----
         var text = "";
         fetch("sample.txt")
           .then((data) => text = data.text())
           .then((res) => console.log(res));
-
     
         // 改行コードで文字列を分割して行の配列にする
         // WindowsのCRLF(\r\n)とUnix/Linux/macOSのLF(\n)の両方に対応
         const lines = text.split(/\r?\n/);
+        console.log('2行目', lines[1]);
 
         // ページ読み込み時に保存された数値を表示
         //window.onload = loadNumber;
