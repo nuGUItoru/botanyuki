@@ -56,13 +56,12 @@
       const container = document.createElement('div');
       container.className = 'counter';
       container.id = counter.id;
-      container.backgroundColor = 'red';
+      container.style.backgroundColor = 'red';
 
       // 現在のカウンターの値を表示する要素
       const display = document.createElement('span');
       display.className = 'value';
       display.textContent = counter.value;
-      display.backgroundColor = 'rgb(255, 0, 0)';
 
       // 「+」ボタン（加算）
       const addButton = document.createElement('button');
