@@ -32,7 +32,7 @@
         // ----
         fetch("sample.txt")
           .then((data) =>
-            const text = data.text();
+            var text = data.text();
 
             // 改行コードで文字列を分割して行の配列にする
             // WindowsのCRLF(\r\n)とUnix/Linux/macOSのLF(\n)の両方に対応
