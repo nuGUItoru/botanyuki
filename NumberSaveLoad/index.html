@@ -40,6 +40,16 @@
         const lines = text.split(/\r?\n/);
         console.log('2行目', lines[1]);
 
+        // 各行を処理
+        for (const line of lines) {
+          if (line.trim() === '') { // 空行をスキップする場合
+            continue;
+          }
+          console.log('行:', line);
+          // ここで各行に対する処理を行う
+        }
+
+
         // ページ読み込み時に保存された数値を表示
         //window.onload = loadNumber;
 
