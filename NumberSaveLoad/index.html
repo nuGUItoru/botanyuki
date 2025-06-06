@@ -23,7 +23,7 @@
         //fetch("sample.txt")
         //  .then((data) => data.text())
         //  .then((res) => console.log(res));
-        const response = await fetch(filePath);
+        const response = fetch(filePath);
 
         if (!response.ok) {
           throw new Error(`ファイルの読み込みに失敗しました: ${response.status} ${response.statusText}`);
