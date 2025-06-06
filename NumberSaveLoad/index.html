@@ -20,6 +20,9 @@
         const STORAGE_KEY = 'myStoredNumber'; // localStorageのキー
 
         console.log('開始');
+        fetch("test.txt")
+          .then((data) => data.text())
+          .then((res) => console.log(res));
 
         // ページ読み込み時に保存された数値を表示
         //window.onload = loadNumber;
