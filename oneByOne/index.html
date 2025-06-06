@@ -38,14 +38,14 @@
   <script>
     // 複数カウンターの初期値の設定
     const countersData = [
-      { id: "counter1", value: 0 },
-      { id: "counter2", value: 0 },
-      { id: "counter3", value: 0 },
-      { id: "counter4", value: 0 },
-      { id: "counter5", value: 0 },
-      { id: "counter6", value: 0 },
-      { id: "counter7", value: 0 },
-      { id: "counter8", value: 0 }
+      { id: "counter1", value: 0, color: rgb(255,0,0) },
+      { id: "counter2", value: 0, color: rgb(255,0,0) },
+      { id: "counter3", value: 0, color: rgb(255,0,0) },
+      { id: "counter4", value: 0, color: rgb(255,0,0) },
+      { id: "counter5", value: 0, color: rgb(255,0,0) },
+      { id: "counter6", value: 0, color: rgb(255,0,0) },
+      { id: "counter7", value: 0, color: rgb(255,0,0) },
+      { id: "counter8", value: 0, color: rgb(255,0,0) }
     ];
 
     // 起動時に保存されているカウンター値を読み込む
@@ -57,7 +57,7 @@
       const container = document.createElement('div');
       container.className = 'counter';
       container.id = counter.id;
-      container.style.backgroundColor = 'rgb(255, 0, 0)';
+      container.style.backgroundColor = counter.color;
 
       // 現在のカウンターの値を表示する要素
       const display = document.createElement('span');
