@@ -24,12 +24,10 @@
         //  .then((data) => data.text())
         //  .then((res) => console.log(res));
         const response = fetch(filePath);
-
         if (!response.ok) {
           throw new Error(`ファイルの読み込みに失敗しました: ${response.status} ${response.statusText}`);
         }
-    
-        const text = await response.text(); // ファイルの内容全体を文字列として取得
+        const text = response.text(); // ファイルの内容全体を文字列として取得
         console.log('2行目', text[1]);
     
         // 改行コードで文字列を分割して行の配列にする
