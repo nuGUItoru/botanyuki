@@ -30,24 +30,30 @@
         //}
         //const text = response.text(); // ファイルの内容全体を文字列として取得
         // ----
-        var text = "";
         fetch("sample.txt")
-          .then((data) => text = data.text())
+          .then((data) =>
+            const text = data.text();
+
+            // 改行コードで文字列を分割して行の配列にする
+            // WindowsのCRLF(\r\n)とUnix/Linux/macOSのLF(\n)の両方に対応
+            const lines = text.split(/\r?\n/);
+            console.log('2行目', lines[1]);
+          )
           .then((res) => console.log(res));
     
         // 改行コードで文字列を分割して行の配列にする
         // WindowsのCRLF(\r\n)とUnix/Linux/macOSのLF(\n)の両方に対応
-        const lines = text.split(/\r?\n/);
-        console.log('2行目', lines[1]);
+        //const lines = text.split(/\r?\n/);
+        //console.log('2行目', lines[1]);
 
         // 各行を処理
-        for (const line of lines) {
-          if (line.trim() === '') { // 空行をスキップする場合
-            continue;
-          }
-          console.log('行:', line);
+        //for (const line of lines) {
+        //  if (line.trim() === '') { // 空行をスキップする場合
+        //    continue;
+        //  }
+        //  console.log('行:', line);
           // ここで各行に対する処理を行う
-        }
+        //}
 
 
         // ページ読み込み時に保存された数値を表示
