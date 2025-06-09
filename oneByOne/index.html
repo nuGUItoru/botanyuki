@@ -99,10 +99,15 @@
       const clearButton = document.createElement('button');
       clearButton.textContent = 'クリア';
       clearButton.addEventListener('click', function () {
-        // 値を 0 にして表示を更新
-        counter.value = 0;
-        display.textContent = counter.value;
-        saveCounters();  // 保存
+
+        let result = confirm('クリアしてよいですか?');
+
+        if(result) {
+          // 値を 0 にして表示を更新
+          counter.value = 0;
+          display.textContent = counter.value;
+          saveCounters();  // 保存
+        }
       });
 
       // 各要素をコンテナに追加
