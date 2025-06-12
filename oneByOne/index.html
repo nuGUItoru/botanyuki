@@ -161,27 +161,20 @@
 	    console.log("in loadCounters");
       //var countersContainer = document.getElementById('counters');
       countersData.forEach(function(counter) {
-        try {
-          console.log("in try");
-          var storageID = "OneByOne_" + counter.id;
-          var countValue = 0;  // データが存在しなかったときのために一旦0を入れている
-          
-          console.log("before localStorage.getItem");
-          countValue = localStorage.getItem(storageID);
-          console.log("after localStorage.getItem");
-		      console.log(countValue);
-  
-          if(countValue == null || isNaN(countValue) == true)
-          {
-            console.log("invalid value");
-            countValue = 0;
-          }
-          counter.value = countValue;
-        } catch(e) {
-          console.log("in catch");
-          console.log(e);
-          counter.value = 0;
+        var storageID = "OneByOne_" + counter.id;
+        var countValue = 0;  // データが存在しなかったときのために一旦0を入れている
+        
+        console.log("before localStorage.getItem");
+        countValue = localStorage.getItem(storageID);
+        console.log("after localStorage.getItem");
+        console.log(countValue);
+
+        if(countValue == null || isNaN(countValue) == true)
+        {
+          console.log("invalid value");
+          countValue = 0;
         }
+        counter.value = countValue;
       });
     }
 
