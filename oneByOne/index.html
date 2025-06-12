@@ -148,7 +148,7 @@
 
     // カウンター値保存
     function saveCounters() {
-      var countersContainer = document.getElementById('counters');
+      //var countersContainer = document.getElementById('counters');
       countersData.forEach(function(counter) {
         var storageID = "OneByOne_" + counter.id;
         localStorage.setItem(storageID, counter.value);
@@ -158,7 +158,7 @@
 
     // カウンター値読込
     function loadCounters() {
-      var countersContainer = document.getElementById('counters');
+      //var countersContainer = document.getElementById('counters');
       countersData.forEach(function(counter) {
         var storageID = "OneByOne_" + counter.id;
         var countValue = localStorage.getItem(storageID);
@@ -171,14 +171,15 @@
       });
     }
 
+	  // カウンター値読込
+    loadCounters();
+
     // ページ内の counters コンテナに各カウンター要素を追加
     const countersContainer = document.getElementById('counters');
     countersData.forEach(function(counter) {
       countersContainer.appendChild(createCounter(counter));
     });
 
-	  // カウンター値読込
-    loadCounters();
   </script>
 </body>
 </html>
