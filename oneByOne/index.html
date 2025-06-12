@@ -171,7 +171,7 @@
           console.log("after localStorage.getItem");
 		      console.log(countValue);
   
-          if(isNaN(countValue) == true)
+          if(countValue == null || isNaN(countValue) == true)
           {
             console.log("invalid value");
             countValue = 0;
