@@ -158,9 +158,11 @@
 
     // カウンター値読込
     function loadCounters() {
+	    console.log("in loadCounters");
       //var countersContainer = document.getElementById('counters');
       countersData.forEach(function(counter) {
         try {
+          console.log("in try");
           var storageID = "OneByOne_" + counter.id;
           var countValue = localStorage.getItem(storageID);
   
@@ -170,6 +172,8 @@
           }
           counter.value = countValue;
         } catch(e) {
+          console.log("in catch");
+          console.log(e);
           counter.value = 0;
         }
       });
