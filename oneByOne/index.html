@@ -164,6 +164,7 @@
         try {
           console.log("in try");
           var storageID = "OneByOne_" + counter.id;
+          countValue = 0;  // データが存在しなかったときのために一旦0を入れている
           
           console.log("before localStorage.getItem");
           var countValue = localStorage.getItem(storageID);
