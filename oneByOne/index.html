@@ -164,10 +164,14 @@
         try {
           console.log("in try");
           var storageID = "OneByOne_" + counter.id;
+          
+          console.log("before localStorage.getItem");
           var countValue = localStorage.getItem(storageID);
+          console.log("after localStorage.getItem");
   
           if(isNaN(countValue) == true)
           {
+            console.log("invalid value");
             countValue = 0;
           }
           counter.value = countValue;
