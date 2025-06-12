@@ -160,14 +160,18 @@
     function loadCounters() {
       //var countersContainer = document.getElementById('counters');
       countersData.forEach(function(counter) {
-        var storageID = "OneByOne_" + counter.id;
-        var countValue = localStorage.getItem(storageID);
-
-        if(isNaN(countValue) == true)
-        {
-          countValue = 0;
+        try {
+          var storageID = "OneByOne_" + counter.id;
+          var countValue = localStorage.getItem(storageID);
+  
+          if(isNaN(countValue) == true)
+          {
+            countValue = 0;
+          }
+          counter.value = countValue;
+        } catch(e) {
+          counter.value = 0;
         }
-        counter.value = countValue;
       });
     }
 
