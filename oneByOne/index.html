@@ -101,22 +101,22 @@
       display.className = 'value';
       display.textContent = counter.value;
 
-      // 「+」ボタン（加算）
-      const addButton = document.createElement('button');
-      addButton.textContent = '+';
-      addButton.addEventListener('click', function () {
-        // 値をインクリメントして表示を更新
-        counter.value++;
-        display.textContent = counter.value;
-        saveCounters();  // 保存
-      });
-
       // 「-」ボタン（減算）
       const subtractButton = document.createElement('button');
       subtractButton.textContent = '-';
       subtractButton.addEventListener('click', function () {
         // 値をデクリメントして表示を更新
         counter.value--;
+        display.textContent = counter.value;
+        saveCounters();  // 保存
+      });
+
+      // 「+」ボタン（加算）
+      const addButton = document.createElement('button');
+      addButton.textContent = '+';
+      addButton.addEventListener('click', function () {
+        // 値をインクリメントして表示を更新
+        counter.value++;
         display.textContent = counter.value;
         saveCounters();  // 保存
       });
